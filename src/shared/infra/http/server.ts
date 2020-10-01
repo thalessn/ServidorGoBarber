@@ -5,10 +5,10 @@ import cors from 'cors';
 import 'express-async-errors';
 
 import routes from './routes';
-import uploadConfig from './config/upload';
-import AppError from './errors/AppError';
+import uploadConfig from '../../../config/upload';
+import AppError from '../../errors/AppError';
 
-import './database'; // importa o arquivo do banco de dados
+import '../typeorm'; // importa o arquivo do banco de dados
 
 const app = express();
 app.use(cors());

@@ -1,6 +1,6 @@
 import { EntityRepository, Repository } from 'typeorm';
 
-import Appointment from '../models/Appointment';
+import Appointment from '../infra/typeorm/entities/Appointment';
 
 @EntityRepository(Appointment) // Decoretor utilizado para definir que a classe é uma entidade
 class AppointmentsRepository extends Repository<Appointment> {
