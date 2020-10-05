@@ -1,10 +1,9 @@
-import { EntityRepository, getRepository, Repository } from 'typeorm';
+import { getRepository, Repository } from 'typeorm';
 
 import IAppointmentsRepository from '@modules/appointments/repositories/IAppointmentsRepository';
 import Appointment from '../entities/Appointment';
 import ICreateAppointmentDTO from '../../../dtos/ICreateAppointmentDTO';
 
-@EntityRepository(Appointment) // Decoretor utilizado para definir que a classe é uma entidade
 class AppointmentsRepository implements IAppointmentsRepository {
     private ormRepository: Repository<Appointment>;
 
