@@ -9,6 +9,7 @@ import AppError from '@shared/errors/AppError';
 import routes from './routes';
 
 import '@shared/infra/typeorm'; // importa o arquivo do banco de dados
+import '@shared/container'; // Carrega o arquivo de ineção de dependência
 
 const app = express();
 app.use(cors());
