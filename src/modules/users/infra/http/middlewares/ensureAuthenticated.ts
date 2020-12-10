@@ -4,7 +4,7 @@ import authConfig from '@config/auth';
 
 import AppError from '@shared/errors/AppError';
 
-interface TokenPayload {
+interface ITokenPayload {
     iat: number;
     exp: number;
     sub: string;
@@ -28,7 +28,7 @@ export default function ensureAuthenticated(
 
         // Foi cridao a interface TokenPayLoad para ser
         // possível utilizar a função " as " para "Converter" em outro objeto
-        const { sub } = decoded as TokenPayload;
+        const { sub } = decoded as ITokenPayload;
 
         // Para inserir a id do usuário no request do Express
         // foi criado um arquivo @types incluindo a propriedade user
