@@ -8,12 +8,15 @@ import 'express-async-errors';
 
 import uploadConfig from '@config/upload';
 import AppError from '@shared/errors/AppError';
+import rateLimiter from './middlewares/rateLimiter';
 import routes from './routes';
 
 import '@shared/infra/typeorm'; // importa o arquivo do banco de dados
 import '@shared/container'; // Carrega o arquivo de injeção de dependência
 
 const app = express();
+
+app.use(rateLimiter);
 app.use(cors());
 app.use(express.json());
 app.use('/files', express.static(uploadConfig.uploadsFolder));
