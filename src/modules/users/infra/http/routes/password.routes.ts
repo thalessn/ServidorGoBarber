@@ -11,9 +11,9 @@ const resetPasswordController = new ResetPasswordController();
 passwordRouter.post(
     '/forgot',
     celebrate({
-        [Segments.BODY]: {
-            email: Joi.string().email().required,
-        },
+        [Segments.BODY]: Joi.object().keys({
+            email: Joi.string().email().required(),
+        }),
     }),
     forgotPasswordController.create,
 );
